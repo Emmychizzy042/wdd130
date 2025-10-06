@@ -45,11 +45,22 @@ nav a:hover {
 }
 
 /* Hero */
-.hero img {
+.hero {
+  background-image: url("../images/hero.jpg");
+  background-size: cover;
+  background-position: center;
   width: 100%;
-  height: auto;
-  display: block;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
 }
+
+
 
 .hero h1 {
   position: absolute;

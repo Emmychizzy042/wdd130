@@ -6,6 +6,7 @@
   --background-color: #f9f9f9;
 }
 
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +20,9 @@ body {
   background-color: var(--background-color);
 }
 
-/* Header & Nav */
+/* ===============================
+   HEADER & NAVIGATION
+================================*/
 header {
   background-color: var(--primary-color);
   color: white;
@@ -38,53 +41,64 @@ nav a {
   text-decoration: none;
   margin-left: 20px;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: var(--accent-color);
 }
 
-/* Hero */
+/* ===============================
+   HERO SECTION
+================================*/
 .hero {
-  background-image: url("../images/hero.jpg");
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
   position: relative;
+  width: 100%;
+  height: auto;
+  text-align: center;
 }
 
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-
-.hero h1 {
+.hero-text {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 2.5rem;
   background-color: rgba(0, 0, 0, 0.4);
-  padding: 10px 20px;
+  padding: 20px;
   border-radius: 10px;
+  max-width: 90%;
 }
 
-.hero {
-  position: relative;
-  text-align: center;
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
-/* Sections */
+.hero-text article h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   SECTIONS
+================================*/
 section {
   padding: 40px 20px;
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
+}
+
+section h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
 }
 
 .trip img {
@@ -94,7 +108,9 @@ section {
   margin: 15px 0;
 }
 
-/* Form */
+/* ===============================
+   FORMS
+================================*/
 form {
   display: flex;
   flex-direction: column;
@@ -114,17 +130,59 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 button:hover {
   background-color: var(--primary-color);
 }
 
-/* Footer */
+/* ===============================
+   FOOTER
+================================*/
 footer {
   background-color: var(--primary-color);
   color: white;
   text-align: center;
   padding: 20px 10px;
   margin-top: 40px;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+/* Social media icons */
+.socialmedia a {
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.socialmedia img {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================*/
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text article h3 {
+    font-size: 1.2rem;
+  }
 }

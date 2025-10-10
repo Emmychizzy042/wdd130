@@ -6,7 +6,6 @@
   --background-color: #f9f9f9;
 }
 
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -20,9 +19,7 @@ body {
   background-color: var(--background-color);
 }
 
-/* ===============================
-   HEADER & NAVIGATION
-================================*/
+/* Header */
 header {
   background-color: var(--primary-color);
   color: white;
@@ -41,54 +38,48 @@ nav a {
   text-decoration: none;
   margin-left: 20px;
   font-weight: bold;
-  transition: color 0.3s ease;
 }
 
 nav a:hover {
   color: var(--accent-color);
 }
 
-/* ===============================
-   HERO SECTION
-================================*/
+/* Hero Section */
 .hero {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 500px;
   text-align: center;
+  color: white;
 }
 
-.hero-image {
+.hero img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 500px;
+  object-fit: cover;
 }
 
-.hero-text {
+.hero h1 {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
   border-radius: 10px;
-  max-width: 90%;
 }
 
-.hero-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+.hero article {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 15px 20px;
+  border-radius: 10px;
 }
 
-.hero-text article h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-/* ===============================
-   SECTIONS
-================================*/
+/* General Section Styling */
 section {
   padding: 40px 20px;
   text-align: center;
@@ -96,21 +87,7 @@ section {
   margin: 0 auto;
 }
 
-section h2 {
-  color: var(--primary-color);
-  margin-bottom: 15px;
-}
-
-.trip img {
-  width: 100%;
-  max-width: 600px;
-  border-radius: 10px;
-  margin: 15px 0;
-}
-
-/* ===============================
-   FORMS
-================================*/
+/* Form */
 form {
   display: flex;
   flex-direction: column;
@@ -130,16 +107,13 @@ button {
   color: white;
   border: none;
   cursor: pointer;
-  transition: background 0.3s ease;
 }
 
 button:hover {
   background-color: var(--primary-color);
 }
 
-/* ===============================
-   FOOTER
-================================*/
+/* Footer */
 footer {
   background-color: var(--primary-color);
   color: white;
@@ -148,11 +122,6 @@ footer {
   margin-top: 40px;
 }
 
-footer p {
-  margin-bottom: 10px;
-}
-
-/* Social media icons */
 .socialmedia a {
   text-decoration: none;
   margin: 0 10px;
@@ -161,28 +130,4 @@ footer p {
 .socialmedia img {
   width: 30px;
   height: 30px;
-  vertical-align: middle;
-}
-
-/* ===============================
-   RESPONSIVE DESIGN
-================================*/
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    padding: 10px 20px;
-  }
-
-  nav a {
-    display: block;
-    margin: 10px 0;
-  }
-
-  .hero-text h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero-text article h3 {
-    font-size: 1.2rem;
-  }
 }

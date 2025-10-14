@@ -1,10 +1,10 @@
 /* ===========================================
    WDD130 Main Site Stylesheet
-   File: styles/wdd130/styles.css
    Author: Emmanuel Benjamin
+   File: /wdd130/wwr/styles/styles.css
    =========================================== */
 
-/* General page styling */
+/* ===== General Page Styling ===== */
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -14,7 +14,7 @@ body {
     color: #333;
 }
 
-/* Header */
+/* ===== Header ===== */
 header {
     background-color: #2c3e50;
     color: #fff;
@@ -28,7 +28,7 @@ header h1 {
     letter-spacing: 1px;
 }
 
-/* Navigation */
+/* ===== Navigation ===== */
 nav {
     background-color: #34495e;
     padding: 10px;
@@ -48,7 +48,7 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Main content area */
+/* ===== Main Content ===== */
 main {
     padding: 20px;
     max-width: 900px;
@@ -58,13 +58,13 @@ main {
     border-radius: 8px;
 }
 
-/* Section headers */
+/* ===== Section Headers ===== */
 h2 {
     color: #2c3e50;
     margin-bottom: 10px;
 }
 
-/* Aside section */
+/* ===== Aside Section ===== */
 aside {
     background-color: #ecf0f1;
     padding: 15px;
@@ -79,56 +79,33 @@ aside h3 {
 }
 
 aside img {
-    max-width: 300px;  /* Keeps image from being too wide */
-    height: auto;      /* Maintains proportions */
+    max-width: 300px;
+    height: auto;
     display: block;
     margin: 10px 0;
     border-radius: 8px;
 }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
     text-align: center;
-    padding: 15px;
+    padding: 20px;
     margin-top: 40px;
     background-color: #2c3e50;
     color: #fff;
     font-size: 0.9rem;
 }
 
-/* Social Media Links (optional) */
-.socialmedia {
+/* ===== Social Media Section ===== */
+.social-icons {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
     margin-top: 10px;
 }
 
-.socialmedia a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-
-.socialmedia a:hover {
-    color: #90e0ef;
-}
-
-/* Utility classes */
-img {
-    border-radius: 8px;
-    max-width: 100%;
-    height: auto;
-}
-
-/* --- Social Media Icons --- */
-.social-icons {
-    margin-top: 10px;
-}
-
 .social-icons a {
-    margin: 0 10px;
     display: inline-block;
 }
 
@@ -141,4 +118,39 @@ img {
 
 .social-icons img:hover {
     transform: scale(1.1);
+}
+
+/* ===== General Utility Classes ===== */
+img {
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== Sticky Toolbar Example (if used later) ===== */
+/* Keeps the share toolbar visible while scrolling */
+.toolbar {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background: #2c3e50;
+    padding: 10px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.toolbar a {
+    display: block;
+    margin: 8px 0;
+}
+
+.toolbar img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.toolbar img:hover {
+    transform: scale(1.2);
 }

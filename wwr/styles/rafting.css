@@ -1,10 +1,10 @@
 /* ===========================================
-   Rafting Website Stylesheet
+   WDD130 - Dry Oar Rafting Stylesheet (fixed)
+   File: wwr/styles/rafting.css
    Author: Emmanuel Benjamin
-   File: /wdd130/wwr/styles/rafting.css
    =========================================== */
 
-/* ====== CSS Variables ====== */
+/* ===== Root Variables ===== */
 :root {
   --primary-color: #0077b6;
   --secondary-color: #00b4d8;
@@ -13,14 +13,14 @@
   --background-color: #f9f9f9;
 }
 
-/* ====== Global Reset ====== */
+/* ===== Global Reset ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ====== General Body Styling ====== */
+/* ===== Body ===== */
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
@@ -28,34 +28,48 @@ body {
   background-color: var(--background-color);
 }
 
-/* ====== Header ====== */
+/* ===== Header ===== */
 header {
   background-color: var(--primary-color);
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 90px;
+  padding: 10px 60px;
 }
 
 header img {
   height: 60px;
+  width: auto;
 }
 
-/* ====== Navigation ====== */
+header h1 {
+  font-size: 1.6rem;
+}
+
+/* ===== Navigation ===== */
+nav {
+  background-color: var(--secondary-color);
+  padding: 10px;
+  text-align: center;
+}
+
 nav a {
   color: white;
   text-decoration: none;
   margin-left: 20px;
   font-weight: bold;
-  transition: color 0.3s ease;
+  display: inline-block;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease;
 }
 
 nav a:hover {
-  color: var(--accent-color);
+  background-color: var(--primary-color);
+  border-radius: 4px;
 }
 
-/* ====== Hero Section ====== */
+/* ===== Hero Section ===== */
 .hero {
   position: relative;
   text-align: center;
@@ -64,9 +78,11 @@ nav a:hover {
 
 .hero img {
   width: 100%;
-  height: 600px;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
   filter: brightness(70%);
+  display: block;
 }
 
 .hero h1,
@@ -75,26 +91,62 @@ nav a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.55);
   padding: 20px;
   border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
 }
 
-/* ====== General Section Styling ====== */
-section {
-  padding: 40px 20px;
-  text-align: center;
+/* ===== Main Content ===== */
+main {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* ====== Contact Form ====== */
+/* ===== Section ===== */
+section {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ===== Aside (if any) ===== */
+aside {
+  background-color: #ecf0f1;
+  color: var(--text-color);
+  padding: 15px;
+  margin: 20px auto;
+  border-left: 4px solid var(--primary-color);
+  border-radius: 8px;
+  max-width: 850px;
+}
+
+aside img {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border-radius: 8px;
+}
+
+/* ===== Forms ===== */
 form {
   display: flex;
   flex-direction: column;
   gap: 10px;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 input,
@@ -117,32 +169,31 @@ button:hover {
   background-color: var(--primary-color);
 }
 
-/* ====== Footer ====== */
+/* ===== Footer ===== */
 footer {
   background-color: var(--primary-color);
   color: white;
   text-align: center;
   padding: 20px 10px;
   margin-top: 40px;
+  border-top: 3px solid var(--accent-color);
 }
 
-/* ====== Social Media Icons ====== */
+/* ===== Social Media Icons ===== */
 .socialmedia {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 1rem;
+  gap: 15px;
   margin-top: 10px;
 }
 
 .socialmedia a {
   text-decoration: none;
-  display: inline-block;
 }
 
 .socialmedia img {
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   transition: transform 0.3s ease;
 }
@@ -151,29 +202,28 @@ footer {
   transform: scale(1.1);
 }
 
-/* ====== Utility ====== */
-img {
-  border-radius: 8px;
-  max-width: 100%;
-  height: auto;
-}
-
-/* ====== Responsive Design ====== */
+/* ===== Responsive Design ===== */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
-    padding: 20px;
+    text-align: center;
   }
 
-  nav {
-    margin-top: 10px;
+  nav a {
+    display: block;
+    margin: 10px 0;
   }
 
-  .hero img {
-    height: 400px;
+  main {
+    padding: 15px;
   }
 
-  form {
-    width: 90%;
+  .hero h1, .hero article {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  aside img {
+    width: 180px;
   }
 }

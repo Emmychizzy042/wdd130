@@ -1,156 +1,150 @@
 /* ===========================================
-   WDD130 Main Site Stylesheet
+   WDD130 Main Site Stylesheet (fixed images)
    Author: Emmanuel Benjamin
-   File: /wdd130/wwr/styles/styles.css
+   File: /wdd130/styles/styles.css
    =========================================== */
 
-/* ===== General Page Styling ===== */
+/* ----- Variables ----- */
+:root{
+  --primary-color: #2c3e50;
+  --accent: #90e0ef;
+  --bg: #f4f4f9;
+  --text: #333;
+}
+
+/* ----- Reset / Base ----- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-color: #f4f4f9;
-    color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing:antialiased;
 }
 
-/* ===== Header ===== */
+/* ----- Header / Nav ----- */
 header {
-    background-color: #2c3e50;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
 }
+header h1 { font-size: 1.8rem; letter-spacing: 1px; }
 
-header h1 {
-    margin: 0;
-    font-size: 2em;
-    letter-spacing: 1px;
-}
-
-/* ===== Navigation ===== */
+/* nav */
 nav {
-    background-color: #34495e;
-    padding: 10px;
-    text-align: center;
+  background-color: #34495e;
+  padding: 10px;
+  text-align: center;
 }
-
 nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: bold;
+}
+nav a:hover { color: var(--accent); text-decoration: underline; }
+
+/* ----- Main container ----- */
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 15px;
 }
 
-nav a:hover {
-    color: #90e0ef;
-    text-decoration: underline;
-}
-
-/* ===== Main Content ===== */
+/* ----- Content card ----- */
 main {
-    padding: 20px;
-    max-width: 900px;
-    margin: 30px auto;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.06);
+  margin-bottom: 20px;
 }
 
-/* ===== Section Headers ===== */
-h2 {
-    color: #2c3e50;
-    margin-bottom: 10px;
-}
-
-/* ===== Aside Section ===== */
-aside {
-    background-color: #ecf0f1;
-    padding: 15px;
-    margin-top: 20px;
-    border-left: 4px solid #2c3e50;
-    border-radius: 5px;
-}
-
-aside h3 {
-    color: #2c3e50;
-    margin-top: 0;
-}
-
-aside img {
-    max-width: 300px;
-    height: auto;
-    display: block;
-    margin: 10px 0;
-    border-radius: 8px;
-}
-
-/* ===== Footer ===== */
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    background-color: #2c3e50;
-    color: #fff;
-    font-size: 0.9rem;
-}
-
-/* ===== Social Media Section ===== */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 10px;
-}
-
-.social-icons a {
-    display: inline-block;
-}
-
-.social-icons img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
-}
-
-.social-icons img:hover {
-    transform: scale(1.1);
-}
-
-/* ===== General Utility Classes ===== */
+/* ----- Image rules (FIX) ----- */
+/* Global safe rule — prevents images from overflowing their containers */
 img {
-    border-radius: 8px;
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
 }
 
-/* ===== Sticky Toolbar Example (if used later) ===== */
-/* Keeps the share toolbar visible while scrolling */
-.toolbar {
-    position: fixed;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    background: #2c3e50;
-    padding: 10px;
-    border-radius: 0 8px 8px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+/* Specific: profile images inside main should be smaller */
+main img.profile,
+img.profile {
+  width: 150px;      /* fixed friendly width for profile pictures */
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #e6e6e6;
+  padding: 4px;
+  border-radius: 6px;
+  margin: 12px auto;
 }
 
-.toolbar a {
-    display: block;
-    margin: 8px 0;
+/* Specific: aside images (country / small showcase) */
+aside img {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
 }
 
-.toolbar img {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease;
+/* Specific: content/hero images that should be full-bleed */
+.hero img,
+.banner img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;      /* do NOT set fixed heights here; allow object-fit if needed */
+  object-fit: cover;
+  display: block;
 }
 
-.toolbar img:hover {
-    transform: scale(1.2);
+/* ----- Headings ----- */
+h1 { color: var(--primary-color); text-align: center; margin-bottom: 12px; }
+h2 { color: var(--primary-color); margin: 12px 0; }
+
+/* ----- Aside block ----- */
+aside {
+  background: #ecf0f1;
+  padding: 15px;
+  border-left: 4px solid var(--primary-color);
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+/* ----- Footer and social icons ----- */
+footer {
+  text-align: center;
+  padding: 18px 10px;
+  background: var(--primary-color);
+  color: #fff;
+  margin-top: 30px;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+.social-icons img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ----- Forms ----- */
+form { max-width: 480px; margin: 0 auto; display:flex; flex-direction:column; gap:10px; }
+input, textarea, button { padding: 10px; border-radius:6px; border:1px solid #ddd; }
+
+/* ----- Responsive tweaks ----- */
+@media (max-width: 768px) {
+  header { padding: 16px; }
+  .container { padding: 0 12px; }
+  main img.profile { width: 120px; }
+  aside img { width: 180px; }
+  .social-icons img { width: 30px; height: 30px; }
 }

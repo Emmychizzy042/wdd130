@@ -48,7 +48,7 @@ nav a:hover { color: var(--accent); text-decoration: underline; }
 
 /* ----- Main container ----- */
 .container {
-  max-width: 1000px;
+  max-width: 600px;
   margin: 30px auto;
   padding: 0 15px;
 }
@@ -75,7 +75,7 @@ img {
 main img.profile,
 img.profile {
   width: 150px;      /* fixed friendly width for profile pictures */
-  max-width: 100%;
+  max-width: 70%;
   height: auto;
   border: 2px solid #e6e6e6;
   padding: 4px;
@@ -141,7 +141,7 @@ form { max-width: 480px; margin: 0 auto; display:flex; flex-direction:column; ga
 input, textarea, button { padding: 10px; border-radius:6px; border:1px solid #ddd; }
 
 /* ----- Responsive tweaks ----- */
-@media (max-width: 768px) {
+@media (max-width: 110px) {
   header { padding: 16px; }
   .container { padding: 0 12px; }
   main img.profile { width: 120px; }
